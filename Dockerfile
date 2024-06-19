@@ -1,7 +1,4 @@
-FROM amazoncorretto:17
-
-COPY /target/ROOT.war ROOT.war
-
-EXPOSE 5000
-
-ENTRYPOINT ["java", "-Dfile.encoding=UTF-8", "-jar", "ROOT.war"]
+FROM openjdk:17-jdk-alpine
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} cdTest3-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/cdTest3-0.0.1-SNAPSHOT.jar"]
