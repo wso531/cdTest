@@ -12,7 +12,6 @@ phases:
       - chmod +x ./kubectl
       - mv ./kubectl /usr/local/bin/kubectl
       - mkdir ~/.kube
-      - aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name eks
       - kubectl get pod --all-namespaces
   pre_build:
     commands:
