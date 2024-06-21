@@ -1,6 +1,9 @@
 FROM ubuntu:18.04
 RUN apt-get update
 RUN apt-get install apache2 -y
+# Apache 설정 파일 수정
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 ADD index.html /var/www/html/index.html
 EXPOSE 80
 CMD ["apachectl", "-D", "FOREGROUND"]
