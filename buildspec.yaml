@@ -35,3 +35,4 @@ phases:
       - sed -i.bak 's#DATE_STRING#'"$DATE"'#' ./EKS/Deployment.yaml
       - kubectl apply -f ./EKS/Deployment.yaml
       - kubectl apply -f ./EKS/Service.yaml
+      - echo ... build end ...
