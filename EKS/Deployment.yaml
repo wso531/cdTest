@@ -1,23 +1,12 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
   name: eks-deploy
+  labels:
+    app: nginx-app
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: eks-test
-  template:
-    metadata:
-      labels:
-        app: eks-test
-    spec:
-      containers:
-        - name: eks-test
-          image: AWS_ECR_URI
-          ports:
-            - containerPort: 80
-          imagePullPolicy: Always
-          env:
-            - name: DATE
-              value: 'DATE_STRING'
+  containers:
+    - name: nginx-container
+      image: nginx
+      ports:
+        - containerPort: 80
