@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM FROM arm32v7/ubuntu:18.04
 RUN apt-get update
 RUN apt-get install apache2 -y
 # Apache 설정 파일 수정
