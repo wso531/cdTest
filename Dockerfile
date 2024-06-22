@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y apache2
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 COPY index.html /var/www/html
+COPY hellow.html /var/www/html
 
 # Apache 포트 개방
 EXPOSE 80
