@@ -12,7 +12,7 @@
 #CMD ["nginx","-g","daemon off;"]
 
 
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
 # 필요한 패키지 설치
 RUN apt-get update && apt-get install -y apache2
